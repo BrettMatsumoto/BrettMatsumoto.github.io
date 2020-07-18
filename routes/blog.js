@@ -6,7 +6,10 @@ const knex = require('../database')
 
 router
     .get('/', (req, res) => {
-        res.send('blog route smoke test');
+        knex.raw('SELECT * FROM blog')
+            .then((result) => {
+                res.send(result.rows);
+            })
     });
 
 module.exports = router;
