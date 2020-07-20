@@ -5,7 +5,7 @@ const router = express.Router();
 const knex = require('../database');
 
 router.get('/', (req, res) => {
-    res.send('index smoke test')
+    res.render('index.hbs')
 })
 
 module.exports = router;
