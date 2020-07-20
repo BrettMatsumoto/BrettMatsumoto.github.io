@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(express.static('public'));
-app.use(methodOveride('_method'));
+// app.use(methodOveride('_method'));
 app.engine('.hbs', exphbs({
     extname: '.hbs',
     partialsDir: __dirname + '/views/partials/',
