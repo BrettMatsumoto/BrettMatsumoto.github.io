@@ -4,12 +4,8 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../database')
 
-router
-    .get('/', (req, res) => {
-        knex.raw('SELECT * FROM blog')
-            .then((result) => {
-                res.send(result.rows);
-            })
-    });
+router.get('/', (req, res) => {
+    return res.render('./templates/blog.hbs');
+});
 
 module.exports = router;
