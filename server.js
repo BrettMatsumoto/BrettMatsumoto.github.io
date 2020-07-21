@@ -18,6 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const blogRoute = require('./routes/blog');
 const indexRoute = require('./routes/index');
+const aboutRoute = require('./routes/about');
+const contactRoute = require('./routes/contact');
 
 require('dotenv').config({ path: './.env' });
 
@@ -25,6 +27,8 @@ const PORT = process.env.EXPRESS_CONTAINER_PORT;
 
 app.use('/', indexRoute)
 app.use('/blog', blogRoute);
+app.use('/about', aboutRoute);
+app.use('/contact', contactRoute);
 
 app.listen(PORT, () => {
     console.log(`Express app is running on port ${PORT}.`);
